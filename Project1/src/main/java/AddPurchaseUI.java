@@ -264,14 +264,15 @@ public class AddPurchaseUI {
                 return;
             }
 
-
-            switch (StoreManager.getInstance().getDataAdapter().savePurchase(purchase)) {
-                case SQLiteDataAdapter.PURCHASE_DUPLICATE_ERROR:
-                    JOptionPane.showMessageDialog(null, "Purchase NOT added successfully! Duplicate product ID!");
-                default:
-                    JOptionPane.showMessageDialog(null, "Purchase added successfully!" + purchase);
+            if(StoreManager.getInstance().getDataAdapter().savePurchase(purchase) == SQLiteDataAdapter.PURCHASE_DUPLICATE_ERROR) {
+                JOptionPane.showMessageDialog(null, "Purchase NOT added successfully! Duplicate purchase ID!");}
+             else{
+                JOptionPane.showMessageDialog(null, "Purchase added successfully!" + purchase);}
             }
+
+
+
         }
     }
 
-}
+

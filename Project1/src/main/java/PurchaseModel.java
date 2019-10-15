@@ -5,9 +5,9 @@ public class PurchaseModel {
 
     public String toString() {
         StringBuilder sb = new StringBuilder("(");
-        sb.append(mProductID).append(",");
         sb.append(mPurchaseID).append(",");
         sb.append(mCustomerID).append(",");
+        sb.append(mProductID).append(",");
         sb.append(mQuantity).append(",");
         sb.append(mPrice).append(",");
         sb.append(mTax).append(",");
